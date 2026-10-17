@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-border: #cbd5e1;
+  --taxi-yellow: #facc15;
+  --taxi-yellow-hover: #eab308;
+  --taxi-black: #090d16;
+}
+
+html.dark {
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  --card: #1e293b;
+  --card-border: #334155;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-taxi-yellow: var(--taxi-yellow);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+  touch-action: manipulation;
+}
+
+html, body, button, input, select, textarea, a {
+  touch-action: manipulation;
+}
+
+.pb-safe {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom, 16px));
+}
+
+.pt-safe {
+  padding-top: max(0.5rem, env(safe-area-inset-top, 0px));
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.touch-target-btn {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leaflet-container {
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1 !important;
+}
+
+.dark-map-container .leaflet-tile {
+  filter: brightness(95%) contrast(105%);
+}
+
+.dark-map-container .leaflet-container {
+  background-color: #121620 !important;
+  font-family: inherit;
+}
+
+.light-map-container .leaflet-tile {
+  filter: none !important;
+}
+
+.light-map-container .leaflet-container {
+  background-color: #e2e8f0 !important;
+  font-family: inherit;
+}

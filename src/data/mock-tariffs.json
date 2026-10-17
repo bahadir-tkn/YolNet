@@ -1,0 +1,140 @@
+{
+  "updatedAt": "2026-10-17T23:20:00.000Z",
+  "tariffs": [
+    {
+      "plateCode": "34",
+      "cityName": "İstanbul",
+      "openingFee": 71.94,
+      "perKmFee": 47.92,
+      "waitingPerMinFee": 7.50,
+      "minShortTripFee": 230.0,
+      "lastUpdated": "2026-10-17T00:00:00Z"
+    },
+    {
+      "plateCode": "06",
+      "cityName": "Ankara",
+      "openingFee": 65.0,
+      "perKmFee": 40.0,
+      "waitingPerMinFee": 7.0,
+      "minShortTripFee": 200.0,
+      "lastUpdated": "2026-10-17T00:00:00Z"
+    },
+    {
+      "plateCode": "35",
+      "cityName": "İzmir",
+      "openingFee": 40.0,
+      "perKmFee": 54.0,
+      "waitingPerMinFee": 7.5,
+      "minShortTripFee": 210.0,
+      "lastUpdated": "2026-10-17T00:00:00Z"
+    },
+    {
+      "plateCode": "16",
+      "cityName": "Bursa",
+      "openingFee": 65.0,
+      "perKmFee": 55.0,
+      "waitingPerMinFee": 7.5,
+      "minShortTripFee": 190.0,
+      "lastUpdated": "2026-10-17T00:00:00Z"
+    },
+    {
+      "plateCode": "07",
+      "cityName": "Antalya",
+      "openingFee": 40.0,
+      "perKmFee": 50.0,
+      "waitingPerMinFee": 7.0,
+      "minShortTripFee": 200.0,
+      "lastUpdated": "2026-10-17T00:00:00Z"
+    },
+    {
+      "plateCode": "01",
+      "cityName": "Adana",
+      "openingFee": 55.0,
+      "perKmFee": 60.0,
+      "waitingPerMinFee": 7.0,
+      "minShortTripFee": 205.0,
+      "lastUpdated": "2026-10-17T00:00:00Z"
+    },
+    {
+      "plateCode": "41",
+      "cityName": "Kocaeli",
+      "openingFee": 55.0,
+      "perKmFee": 55.0,
+      "waitingPerMinFee": 7.0,
+      "minShortTripFee": 200.0,
+      "lastUpdated": "2026-10-17T00:00:00Z"
+    },
+    {
+      "plateCode": "42",
+      "cityName": "Konya",
+      "openingFee": 55.0,
+      "perKmFee": 50.0,
+      "waitingPerMinFee": 6.5,
+      "minShortTripFee": 200.0,
+      "lastUpdated": "2026-10-17T00:00:00Z"
+    },
+    {
+      "plateCode": "26",
+      "cityName": "Eskişehir",
+      "openingFee": 65.0,
+      "perKmFee": 65.0,
+      "waitingPerMinFee": 7.5,
+      "minShortTripFee": 200.0,
+      "lastUpdated": "2026-10-17T00:00:00Z"
+    },
+    {
+      "plateCode": "48",
+      "cityName": "Muğla",
+      "openingFee": 150.0,
+      "perKmFee": 50.0,
+      "waitingPerMinFee": 8.0,
+      "minShortTripFee": 250.0,
+      "lastUpdated": "2026-10-17T00:00:00Z"
+    },
+    {
+      "plateCode": "33",
+      "cityName": "Mersin",
+      "openingFee": 50.0,
+      "perKmFee": 60.0,
+      "waitingPerMinFee": 7.0,
+      "minShortTripFee": 230.0,
+      "lastUpdated": "2026-10-17T00:00:00Z"
+    },
+    {
+      "plateCode": "27",
+      "cityName": "Gaziantep",
+      "openingFee": 50.0,
+      "perKmFee": 50.0,
+      "waitingPerMinFee": 6.5,
+      "minShortTripFee": 200.0,
+      "lastUpdated": "2026-10-17T00:00:00Z"
+    },
+    {
+      "plateCode": "55",
+      "cityName": "Samsun",
+      "openingFee": 50.0,
+      "perKmFee": 40.25,
+      "waitingPerMinFee": 6.0,
+      "minShortTripFee": 160.0,
+      "lastUpdated": "2026-10-17T00:00:00Z"
+    },
+    {
+      "plateCode": "61",
+      "cityName": "Trabzon",
+      "openingFee": 90.0,
+      "perKmFee": 62.0,
+      "waitingPerMinFee": 7.5,
+      "minShortTripFee": 260.0,
+      "lastUpdated": "2026-10-17T00:00:00Z"
+    },
+    {
+      "plateCode": "20",
+      "cityName": "Denizli",
+      "openingFee": 50.0,
+      "perKmFee": 40.0,
+      "waitingPerMinFee": 6.0,
+      "minShortTripFee": 150.0,
+      "lastUpdated": "2026-10-17T00:00:00Z"
+    }
+  ]
+}

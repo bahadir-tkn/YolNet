@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="amberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+  </defs>
+  <!-- Background Squircle / Rounded Tile -->
+  <rect x="24" y="24" width="464" height="464" rx="112" fill="url(#amberGrad)" />
+  
+  <!-- Taxi Roof Light Sign / Bar -->
+  <rect x="180" y="90" width="152" height="34" rx="17" fill="#0F172A" />
+  
+  <!-- Stylized "Y" Letter in Deep Navy/Slate -->
+  <path d="M 150 160 L 220 280 L 220 410 C 220 422 230 432 242 432 L 270 432 C 282 432 292 422 292 410 L 292 280 L 362 160 C 370 146 358 132 342 132 L 305 132 C 295 132 286 138 281 147 L 256 195 L 231 147 C 226 138 217 132 207 132 L 170 132 C 154 132 142 146 150 160 Z" fill="#0F172A" />
+</svg>
