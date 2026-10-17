@@ -2,14 +2,14 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'YolNet - Canlı Trafik, Taksimetre & Şoför/Yolcu Kokpiti',
+  title: 'YolNet - Taksi Ücret & Rota Hesaplama',
   description:
-    'Yolcular ve taksi sürücüleri için canlı trafik destekli resmi UKOME taksimetre, güzergah hakemi, ücret denetçisi ve net kâr hesaplayıcı.',
+    'Canlı trafik destekli resmi taksimetre, güzergah ve ücret hesaplama uygulaması.',
   applicationName: 'YolNet',
   manifest: '/manifest.json',
   appleWebApp: {
     capable: true,
-    statusBarStyle: 'black-translucent',
+    statusBarStyle: 'default',
     title: 'YolNet',
   },
   icons: {
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#0F172A',
+  themeColor: '#FFFFFF',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 1,
@@ -36,14 +36,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="tr" className="dark h-full bg-[#0F172A]">
+    <html lang="tr" className="light h-full bg-slate-50 dark:bg-slate-950">
       <head>
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="YolNet" />
       </head>
-      <body className="h-full bg-[#0F172A] text-slate-100 antialiased selection:bg-yellow-400 selection:text-slate-900">
+      <body className="h-full bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 antialiased selection:bg-amber-300 selection:text-slate-900">
         {children}
       </body>
     </html>

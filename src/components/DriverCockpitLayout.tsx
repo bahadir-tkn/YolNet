@@ -1,12 +1,10 @@
 'use client';
 
 /**
- * YolNet - DriverCockpitLayout
- * Yandex Go tarzı harita odaklı, akıcı 3 kademeli (Kompakt, Dengeli, Geniş) Bottom Sheet Arayüzü
+ * YolNet - Sade, Aydınlık ve Harita Odaklı Bottom Sheet Düzeni
  */
 
 import React, { useState, useRef, useEffect } from 'react';
-import { ChevronUp, ChevronDown } from 'lucide-react';
 
 export type SheetSnapPoint = 'collapsed' | 'mid' | 'expanded';
 
@@ -32,7 +30,7 @@ export const DriverCockpitLayout: React.FC<DriverCockpitLayoutProps> = ({
   const sheetRef = useRef<HTMLElement>(null);
 
   const [internalSnap, setInternalSnap] = useState<SheetSnapPoint>(activeSnap || 'mid');
-  const [containerHeight, setContainerHeight] = useState<number>(680);
+  const [containerHeight, setContainerHeight] = useState<number>(720);
 
   useEffect(() => {
     if (activeSnap) {
@@ -73,13 +71,11 @@ export const DriverCockpitLayout: React.FC<DriverCockpitLayoutProps> = ({
     }
   }, [hasResult]);
 
-  // Çıpa Yükseklikleri:
-  // 'collapsed': 130px (Tam harita inceleme modu)
-  // 'mid': ~%50 (Harita üst yarıda net görünür, altta Yandex Go gibi rota + fiyat kartları)
-  // 'expanded': ~%86 (Detaylı araçlar / adres arama için geniş alan, üstte yine harita şeridi kalır)
-  const collapsedHeight = 130;
-  const midHeight = Math.max(295, Math.round(containerHeight * 0.50));
-  const expandedHeight = Math.max(430, Math.round(containerHeight * 0.86));
+  const collapsedHeight = 120;
+  const midHeight = hasResult
+    ? Math.max(325, Math.min(370, Math.round(containerHeight * 0.49)))
+    : Math.max(275, Math.min(320, Math.round(containerHeight * 0.44)));
+  const expandedHeight = Math.max(440, Math.round(containerHeight * 0.84));
 
   const baseHeight =
     snap === 'collapsed'
@@ -167,12 +163,12 @@ export const DriverCockpitLayout: React.FC<DriverCockpitLayoutProps> = ({
 
   return (
     <div className="h-full w-full flex flex-col overflow-hidden relative select-none touch-manipulation">
-      {/* 1. Üst Kısım (Kompakt Sticky Header) */}
-      <header className="sticky top-0 z-30 shrink-0 shadow-xs border-b border-slate-200 dark:border-slate-800/80 bg-white/95 dark:bg-[#0F172A]/95 backdrop-blur-md">
+      {/* 1. Üst Bar */}
+      <header className="sticky top-0 z-30 shrink-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md">
         {topBar}
       </header>
 
-      {/* 2. Ana Çalışma Alanı: Harita + Bottom Sheet */}
+      {/* 2. Harita + Alt Çekmece */}
       <main ref={containerRef} className="relative flex-1 min-h-0 w-full overflow-hidden">
         <div className="absolute inset-0 w-full h-full z-0">
           {mapSlot}
@@ -181,51 +177,23 @@ export const DriverCockpitLayout: React.FC<DriverCockpitLayoutProps> = ({
         <section
           ref={sheetRef}
           style={{ height: `${activeHeight}px` }}
-          className={`absolute bottom-0 left-0 right-0 z-20 flex flex-col bg-white text-slate-900 dark:bg-[#0F172A]/98 dark:text-white rounded-t-[24px] shadow-[0_-10px_30px_rgba(0,0,0,0.18)] dark:shadow-[0_-14px_40px_rgba(0,0,0,0.75)] border-t border-slate-200/90 dark:border-slate-800 ${
+          className={`absolute bottom-0 left-0 right-0 z-20 flex flex-col bg-white text-slate-900 dark:bg-slate-900 dark:text-white rounded-t-[26px] shadow-[0_-8px_30px_rgba(15,23,42,0.12)] dark:shadow-[0_-12px_36px_rgba(0,0,0,0.65)] border-t border-slate-100 dark:border-slate-800 ${
             isDragging ? 'transition-none' : 'transition-[height] duration-300 ease-out'
           }`}
         >
-          {/* Minimalist Drag Handle Bar */}
+          {/* Sade Tutamaç Çizgisi (Yandex Go tarzı) */}
           <div
             onPointerDown={handlePointerDown}
             onPointerMove={handlePointerMove}
             onPointerUp={handlePointerUp}
             onPointerCancel={handlePointerUp}
-            className="w-full pt-2 pb-1.5 px-4 flex items-center justify-between cursor-grab active:cursor-grabbing touch-none select-none shrink-0"
-            title="Paneli yukarı veya aşağı kaydırın"
+            className="w-full pt-2.5 pb-1.5 flex items-center justify-center cursor-grab active:cursor-grabbing touch-none select-none shrink-0"
           >
-            <span className="text-[10px] font-bold text-slate-400 dark:text-slate-500 w-20 truncate">
-              {snap === 'collapsed' ? 'Harita Modu' : snap === 'expanded' ? 'Detay Görünüm' : ''}
-            </span>
-
-            <div className="w-10 h-1.5 rounded-full bg-slate-300 dark:bg-slate-600 hover:bg-amber-400 transition-colors" />
-
-            <div className="w-20 flex justify-end">
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  updateSnap(snap === 'expanded' ? 'mid' : snap === 'mid' ? 'collapsed' : 'mid');
-                }}
-                className="text-[10px] font-bold text-slate-400 hover:text-amber-500 flex items-center gap-0.5 cursor-pointer"
-              >
-                {snap === 'collapsed' ? (
-                  <>
-                    <ChevronUp className="w-3.5 h-3.5 text-amber-500" />
-                    <span className="text-amber-500">Aç</span>
-                  </>
-                ) : (
-                  <>
-                    <ChevronDown className="w-3.5 h-3.5" />
-                    <span>Harita</span>
-                  </>
-                )}
-              </button>
-            </div>
+            <div className="w-9 h-1 rounded-full bg-slate-300 dark:bg-slate-700" />
           </div>
 
-          {/* Kaydırılabilir İçerik Alanı */}
-          <div className="flex-1 min-h-0 overflow-y-auto px-3 pt-0.5 pb-safe no-scrollbar touch-pan-y space-y-2.5 overscroll-contain">
+          {/* İçerik */}
+          <div className="flex-1 min-h-0 overflow-y-auto px-3.5 pt-0.5 pb-safe no-scrollbar touch-pan-y overscroll-contain">
             {bottomSheet}
           </div>
         </section>
