@@ -128,13 +128,28 @@ export async function fetchRemoteTariffs(url: string): Promise<CityTariff[] | nu
     }
 
     const parsedJson = JSON.parse(rawText);
-    const rawList: unknown[] = Array.isArray(parsedJson)
+    let rawList: unknown[] = Array.isArray(parsedJson)
       ? parsedJson
       : Array.isArray(parsedJson?.tariffs)
       ? parsedJson.tariffs
       : Array.isArray(parsedJson?.data)
       ? parsedJson.data
       : [];
+
+    if (
+      rawList.length === 0 &&
+      parsedJson?.cities &&
+      typeof parsedJson.cities === 'object' &&
+      !Array.isArray(parsedJson.cities)
+    ) {
+      rawList = Object.entries(parsedJson.cities as Record<string, Record<string, unknown>>).map(
+        ([plateCode, item]) => ({
+          ...item,
+          plateCode: plateCode.padStart(2, '0'),
+          lastUpdated: item?.lastUpdated || parsedJson.updatedAt || new Date().toISOString(),
+        })
+      );
+    }
 
     const validTariffs = rawList.filter(isValidTariffItem);
     return validTariffs.length > 0 ? validTariffs : null;
