@@ -112,6 +112,7 @@ export const CITY_BOUNDING_BOXES: Record<string, [number, number, number, number
   '48': [27.20, 36.50, 29.70, 37.60], // Muğla
   '33': [32.40, 36.00, 35.20, 37.40], // Mersin
   '20': [28.50, 37.15, 29.95, 38.30], // Denizli
+  '32': [30.15, 37.30, 31.35, 38.45], // Isparta
 };
 
 export const DEFAULT_MAP_CENTER: Coordinates = CITY_CENTERS['34'];

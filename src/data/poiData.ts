@@ -953,6 +953,74 @@ export const CITY_POIS: Record<string, PoiItem[]> = {
       keywords: ['meydan', 'atatürk alanı', 'merkez'],
     },
   ],
+
+  // 32 - ISPARTA
+  '32': [
+    {
+      id: 'isp-kaymakkapi',
+      label: 'Kaymakkapı Meydanı',
+      shortName: 'Kaymakkapı Meydanı',
+      category: 'center',
+      coords: { lat: 37.7648, lng: 30.5566 },
+      keywords: ['kaymakkapı', 'meydan', 'merkez', 'çarşı'],
+    },
+    {
+      id: 'isp-sehir-hastanesi',
+      label: 'Isparta Şehir Hastanesi',
+      shortName: 'Isparta Şehir Hastanesi',
+      category: 'hospital',
+      coords: { lat: 37.7825, lng: 30.5436 },
+      keywords: ['şehir hastanesi', 'hastane', 'isparta şehir hastanesi', 'sağlık'],
+    },
+    {
+      id: 'isp-sdu',
+      label: 'Süleyman Demirel Üniversitesi (SDÜ Kampüsü)',
+      shortName: 'SDÜ Kampüsü',
+      category: 'university',
+      coords: { lat: 37.8295, lng: 30.5262 },
+      keywords: ['sdü', 'süleyman demirel', 'üniversite', 'çünür', 'kampüs'],
+    },
+    {
+      id: 'isp-otogar',
+      label: 'Isparta Şehirlerarası Otobüs Terminali (Otogar)',
+      shortName: 'Isparta Otogar',
+      category: 'terminal',
+      coords: { lat: 37.8044, lng: 30.5432 },
+      keywords: ['otogar', 'terminal', 'otobüs', 'çünür'],
+    },
+    {
+      id: 'isp-iyaspark',
+      label: 'Iyaşpark AVM',
+      shortName: 'Iyaşpark AVM',
+      category: 'mall',
+      coords: { lat: 37.7852, lng: 30.5458 },
+      keywords: ['iyaş', 'iyaşpark', 'avm', 'alışveriş'],
+    },
+    {
+      id: 'isp-meydan-avm',
+      label: 'Isparta Meydan AVM',
+      shortName: 'Meydan AVM',
+      category: 'mall',
+      coords: { lat: 37.7695, lng: 30.5542 },
+      keywords: ['meydan avm', 'avm', 'belediye'],
+    },
+    {
+      id: 'isp-havalimani',
+      label: 'Isparta Süleyman Demirel Havalimanı (ISE)',
+      shortName: 'SDÜ Havalimanı',
+      category: 'airport',
+      coords: { lat: 37.8554, lng: 30.3684 },
+      keywords: ['havalimanı', 'havaalanı', 'süleyman demirel havalimanı', 'uçak'],
+    },
+    {
+      id: 'isp-gokcay',
+      label: 'Gökçay Mesirelik Alanı',
+      shortName: 'Gökçay Mesireliği',
+      category: 'zoo',
+      coords: { lat: 37.7456, lng: 30.5482 },
+      keywords: ['gökçay', 'mesire', 'park', 'kirazlıdere'],
+    },
+  ],
 };
 
 /**

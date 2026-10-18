@@ -71,7 +71,7 @@ html, body, button, input, select, textarea, a {
 }
 
 .dark-map-container .leaflet-tile {
-  filter: brightness(95%) contrast(105%);
+  filter: invert(100%) hue-rotate(180deg) brightness(93%) contrast(90%) saturate(0.82) !important;
 }
 
 .dark-map-container .leaflet-container {
@@ -80,10 +80,11 @@ html, body, button, input, select, textarea, a {
 }
 
 .light-map-container .leaflet-tile {
-  filter: none !important;
+  filter: saturate(0.82) brightness(1.02) contrast(0.98) !important;
 }
 
 .light-map-container .leaflet-container {
-  background-color: #e2e8f0 !important;
+  background-color: #f1f5f9 !important;
   font-family: inherit;
 }
+

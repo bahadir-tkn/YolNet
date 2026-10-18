@@ -9,8 +9,8 @@
 import { CityTariff, PlateOption, TariffSource } from '@/types/taxi';
 import mockTariffsData from '@/data/mock-tariffs.json';
 
-export const CACHED_TARIFFS_KEY = 'yolnet_cached_tariffs_v3';
-export const CACHED_TARIFFS_TIMESTAMP_KEY = 'yolnet_cached_tariffs_updated_at_v3';
+export const CACHED_TARIFFS_KEY = 'yolnet_cached_tariffs_v4';
+export const CACHED_TARIFFS_TIMESTAMP_KEY = 'yolnet_cached_tariffs_updated_at_v4';
 export const REMOTE_TIMEOUT_MS = 5000;
 
 export const AVAILABLE_PLATES: PlateOption[] = [
@@ -19,6 +19,7 @@ export const AVAILABLE_PLATES: PlateOption[] = [
   { code: '35', cityName: 'İzmir' },
   { code: '16', cityName: 'Bursa' },
   { code: '07', cityName: 'Antalya' },
+  { code: '32', cityName: 'Isparta' },
   { code: '01', cityName: 'Adana' },
   { code: '41', cityName: 'Kocaeli' },
   { code: '42', cityName: 'Konya' },

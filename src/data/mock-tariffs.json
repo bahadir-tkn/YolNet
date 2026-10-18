@@ -135,6 +135,15 @@
       "waitingPerMinFee": 6.0,
       "minShortTripFee": 150.0,
       "lastUpdated": "2026-10-17T00:00:00Z"
+    },
+    {
+      "plateCode": "32",
+      "cityName": "Isparta",
+      "openingFee": 65.0,
+      "perKmFee": 65.0,
+      "waitingPerMinFee": 5.0,
+      "minShortTripFee": 200.0,
+      "lastUpdated": "2026-10-17T00:00:00Z"
     }
   ]
 }

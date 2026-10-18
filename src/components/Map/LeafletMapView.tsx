@@ -66,9 +66,9 @@ export const LeafletMapView: React.FC<LeafletMapViewProps> = ({
   const [isMapReady, setIsMapReady] = useState(false);
   const cityCenter = getCityCenter(selectedPlate);
 
-  // Harita Katmanlarını (Aydınlık Voyager / Gece Dark) Güncelleme
+  // Harita Katmanlarını Güncelleme (Resmi OpenStreetMap - API Anahtarı Gerektirmez, Filigransız)
   const applyTileLayers = useCallback(
-    (map: L.Map, themeMode: 'dark' | 'light', L: typeof import('leaflet')) => {
+    (map: L.Map, _themeMode: 'dark' | 'light', L: typeof import('leaflet')) => {
       tileLayersRef.current.forEach((layer) => {
         try {
           map.removeLayer(layer);
@@ -76,25 +76,14 @@ export const LeafletMapView: React.FC<LeafletMapViewProps> = ({
       });
       tileLayersRef.current = [];
 
-      if (themeMode === 'dark') {
-        const darkLayer = L.tileLayer(
-          'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
-          {
-            maxZoom: 19,
-            subdomains: 'abcd',
-          }
-        ).addTo(map);
-        tileLayersRef.current = [darkLayer];
-      } else {
-        const voyagerLayer = L.tileLayer(
-          'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
-          {
-            maxZoom: 19,
-            subdomains: 'abcd',
-          }
-        ).addTo(map);
-        tileLayersRef.current = [voyagerLayer];
-      }
+      const osmLayer = L.tileLayer(
+        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        {
+          maxZoom: 19,
+          attribution: '&copy; OpenStreetMap',
+        }
+      ).addTo(map);
+      tileLayersRef.current = [osmLayer];
     },
     []
   );
